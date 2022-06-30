@@ -44,33 +44,41 @@
 <body>
     <div>
         <form>
-            <div class="RowDiv">
-                <input type="text" name="" id="inputTypeText" class="inputText">
-                <input type="button" class="clearButton" value="clear" onclick="Calculator.clearButton()">
+            <div style="width: 48%; float: left;">
+                <div class="RowDiv">
+                    <input type="text" name="" id="inputTypeText" class="inputText">
+                    <input type="button" class="clearButton" value="clear" onclick="Calculator.clearButton()">
+                </div>
+                <div class="RowDiv">
+                    <input type="button" id="" onclick="Calculator.writeText(this.value)" class="CalcButton" value="7"> 
+                    <input type="button" id="" onclick="Calculator.writeText(this.value)" class="CalcButton" value="8">
+                    <input type="button" id="" onclick="Calculator.writeText(this.value)" class="CalcButton" value="9">
+                </div>
+                <div class="RowDiv">
+                    <input type="button" id="" onclick="Calculator.writeText(this.value)" class="CalcButton" value="6"> 
+                    <input type="button" id="" onclick="Calculator.writeText(this.value)" class="CalcButton" value="5">
+                    <input type="button" id="" onclick="Calculator.writeText(this.value)" class="CalcButton" value="4">
+                </div>
+                <div class="RowDiv ">
+                    <input type="button" id="" onclick="Calculator.writeText(this.value)" class="CalcButton" value="3"> 
+                    <input type="button" id="" onclick="Calculator.writeText(this.value)" class="CalcButton" value="2">
+                    <input type="button" id="" onclick="Calculator.writeText(this.value)" class="CalcButton" value="1">
+                </div>
+                <div class="RowDiv">
+                    <input type="button" id="" onclick="Calculator.OperatorClick(this.value)" class="operationButtons" value="+"> 
+                    <input type="button" id="" onclick="Calculator.OperatorClick(this.value)" class="operationButtons" value="-">
+                    <input type="button" id="" onclick="Calculator.OperatorClick(this.value)" class="operationButtons" value="x">
+                    <input type="button" id="" onclick="Calculator.OperatorClick(this.value)" class="operationButtons" value="/">
+                </div>
+                <div class="RowDiv">
+                    <input type="button" value="=" onclick="Calculator.Calculation()" class="equalButton">
+                </div>
             </div>
-            <div class="RowDiv">
-                <input type="button" id="" onclick="Calculator.writeText(this.value)" class="CalcButton" value="7"> 
-                <input type="button" id="" onclick="Calculator.writeText(this.value)" class="CalcButton" value="8">
-                <input type="button" id="" onclick="Calculator.writeText(this.value)" class="CalcButton" value="9">
-            </div>
-            <div class="RowDiv">
-                <input type="button" id="" onclick="Calculator.writeText(this.value)" class="CalcButton" value="6"> 
-                <input type="button" id="" onclick="Calculator.writeText(this.value)" class="CalcButton" value="5">
-                <input type="button" id="" onclick="Calculator.writeText(this.value)" class="CalcButton" value="4">
-            </div>
-            <div class="RowDiv ">
-                <input type="button" id="" onclick="Calculator.writeText(this.value)" class="CalcButton" value="3"> 
-                <input type="button" id="" onclick="Calculator.writeText(this.value)" class="CalcButton" value="2">
-                <input type="button" id="" onclick="Calculator.writeText(this.value)" class="CalcButton" value="1">
-            </div>
-            <div class="RowDiv">
-                <input type="button" id="" onclick="Calculator.OperatorClick(this.value)" class="operationButtons" value="+"> 
-                <input type="button" id="" onclick="Calculator.OperatorClick(this.value)" class="operationButtons" value="-">
-                <input type="button" id="" onclick="Calculator.OperatorClick(this.value)" class="operationButtons" value="x">
-                <input type="button" id="" onclick="Calculator.OperatorClick(this.value)" class="operationButtons" value="/">
-            </div>
-            <div class="RowDiv">
-                <input type="button" value="=" onclick="Calculator.Calculation()" class="equalButton">
+
+            <div style="width: 48%; float: right;">
+                <ul id="CalacValues">
+
+                </ul>
             </div>
         </form>
     </div>

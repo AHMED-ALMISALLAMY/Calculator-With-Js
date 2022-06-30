@@ -34,11 +34,13 @@
 // console.log(calculator);    // string
 
 
+let DisplayValues = [];
 
 let Calculator = {
     inputText: document.getElementById('inputTypeText'),
     firstValue: null,
     operator: 0,
+    currentValues: [],
     newOperation: true,
     writeText: function(buttonValue) {
         if (this.inputText.value !== "" && this.newOperation === false) {
@@ -69,23 +71,37 @@ let Calculator = {
             return;
         }
         let NewValue = parseFloat(this.inputText.value);
+        let result = 0; 
         switch(this.operator) {
             case "+":
-                this.inputText.value = this.firstValue + NewValue;
+                result = this.inputText.value = this.firstValue + NewValue;
                 break;
             case "-":
-                this.inputText.value = this.firstValue - NewValue;
+                result = this.inputText.value = this.firstValue - NewValue;
                 break; 
             case "x":
-                this.inputText.value = this.firstValue * NewValue;
+                result = this.inputText.value = this.firstValue * NewValue;
                 break;
             case "/":
-                this.inputText.value = this.firstValue / NewValue;
+                result = this.inputText.value = this.firstValue / NewValue;
                 break;    
         }
         this.firstValue = null;
         this.operator = 0;
         this.newOperation = false;
+        this.currentValues.push(result);
+        let DisplayValues = document.getElementById('CalacValues');
+        DisplayValues.innerHTML = "";
+        // DisplayValues.innerText = this.currentValues.join("\t");
+        
+        // for (let i = 0; i < this.currentValues.lenght; i++) {
+        //     DisplayValues.innerHTML += "<li>" + this.currentValues[0] + "</li>";   
+        // }
+
+        this.currentValues.forEach(element => {
+            DisplayValues.innerHTML += "<li>" + element + "</li>"; 
+        });
+  
     },
     clearButton: function() {
         this.inputText.value = "";
